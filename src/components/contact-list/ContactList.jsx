@@ -21,8 +21,8 @@ const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(fetchContacts());
-  }, []);
-  
+  }, [dispatch]);
+
   return (
     <ul className={style.contactList}>
       {contacts.length > 0 &&

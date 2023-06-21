@@ -7,17 +7,11 @@ import { fetchContacts } from '../../redux/operators';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 
-
-
-
-
-
 function ContactList({ handleDelete }) {
   const contacts = useSelector(getContacts);
   const filter = useSelector(getFilter);
   const filteredContacts = filterFunction(contacts, filter);
-const dispatch = useDispatch();
-
+  const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(fetchContacts());
@@ -26,9 +20,13 @@ const dispatch = useDispatch();
   return (
     <ul className={style.contactList}>
       {contacts.length > 0 &&
-      filteredContacts.map((contact) => (
-        <ContactListItem key={contact.id} contact={contact} handleDelete={handleDelete} />
-      ))}
+        filteredContacts.map(contact => (
+          <ContactListItem
+            key={contact.id}
+            contact={contact}
+            handleDelete={handleDelete}
+          />
+        ))}
     </ul>
   );
 }

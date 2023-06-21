@@ -6,10 +6,7 @@ export default function filterFunction(contacts, filter) {
     // const contactNumber = contact.phone;
     // const filterNumber = filter.phone;
 
-    
-
-    return contactName.includes(filterName) ;
-    
+    return contactName.includes(filterName);
   });
 }
 // ((contact) =>
